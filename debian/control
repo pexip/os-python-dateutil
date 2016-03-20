@@ -8,7 +8,7 @@ Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/git/calendarserver/python-dateutil.git
 Vcs-Browser: http://git.debian.org/?p=calendarserver/python-dateutil.git
 X-Python-Version: >= 2.3
-XS-Pexip-Upstream: http://archive.ubuntu.com/ubuntu/ precise
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: python-dateutil
 Architecture: all
