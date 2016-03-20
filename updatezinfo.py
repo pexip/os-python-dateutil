@@ -1,45 +1,33 @@
-#!/usr/bin/python
-from dateutil.zoneinfo import rebuild
-import shutil
-import sys
+#!/usr/bin/env python
 import os
-import re
+import hashlib
+import json
+import io
 
-SERVER = "elsie.nci.nih.gov"
-DIR = "/pub"
-NAME = re.compile("tzdata(.*).tar.gz")
+from six.moves.urllib import request
+
+from dateutil.zoneinfo import rebuild
+
+METADATA_FILE = "zonefile_metadata.json"
+
 
 def main():
-    if len(sys.argv) == 2:
-        tzdata = sys.argv[1]
-    else:
-        from ftplib import FTP
-        print "Connecting to %s..." % SERVER
-        ftp = FTP(SERVER)
-        print "Logging in..."
-        ftp.login()
-        print "Changing to %s..." % DIR
-        ftp.cwd(DIR)
-        print "Listing files..."
-        for name in ftp.nlst():
-            if NAME.match(name):
-                break
-        else:
-            sys.exit("error: file matching %s not found" % NAME.pattern)
-        if os.path.isfile(name):
-            print "Found local %s..." % name
-        else:
-            print "Retrieving %s..." % name
-            file = open(name, "w")
-            ftp.retrbinary("RETR "+name, file.write)
-            file.close()
-        ftp.close()
-        tzdata = name
-    if not tzdata or not NAME.match(tzdata):
-        sys.exit("Usage: updatezinfo.py tzdataXXXXX.tar.gz")
-    print "Updating timezone information..."
-    rebuild(tzdata, NAME.match(tzdata).group(1))
-    print "Done."
+    with io.open(METADATA_FILE, 'r') as f:
+        metadata = json.load(f)
+
+    if not os.path.isfile(metadata['tzdata_file']):
+        print("Downloading tz file from iana")
+        request.urlretrieve(os.path.join(metadata['releases_url'],
+                                         metadata['tzdata_file']),
+                            metadata['tzdata_file'])
+    with open(metadata['tzdata_file'], 'rb') as tzfile:
+        sha_hasher = hashlib.sha512()
+        sha_hasher.update(tzfile.read())
+        sha_512_file = sha_hasher.hexdigest()
+        assert metadata['tzdata_file_sha512'] == sha_512_file, "SHA failed for"
+    print("Updating timezone information...")
+    rebuild(metadata['tzdata_file'], zonegroups=metadata['zonegroups'])
+    print("Done.")
 
 if __name__ == "__main__":
     main()
