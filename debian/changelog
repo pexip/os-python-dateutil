@@ -1,3 +1,9 @@
+python-dateutil (2.4.2-1pexip2) pexip; urgency=low
+
+  * Drop local changes
+
+ -- John-Mark Bell <jmb@pexip.com>  Mon, 17 Apr 2017 18:36:16 +0100
+
 python-dateutil (2.4.2-1pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging
