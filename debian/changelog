@@ -1,3 +1,29 @@
+python-dateutil (2.5.3-2pexip1) pexip; urgency=low
+
+  * New upstream release
+
+ -- John-Mark Bell <jmb@pexip.com>  Sat, 28 Jul 2018 23:42:36 +0100
+
+python-dateutil (2.5.3-2) unstable; urgency=medium
+
+  * [458e1f9] Move test dependencies from debian/control to
+    debian/tests/control
+  * [4c7a166] Use unittest.skip correctly
+  * [1aca1b9] Bump standads version
+  * [8494f04] Use https:// Vcs-* fields
+  * [1600fd1] Drop superfluous XS-Testsuite field
+
+ -- Guido Günther <agx@sigxcpu.org>  Tue, 27 Sep 2016 09:09:45 +0200
+
+python-dateutil (2.5.3-1) unstable; urgency=medium
+
+  * [771b73d] New upstream version 2.5.3 (Closes: #837918)
+  * [679dfa9] Adjust timezone removal patch
+  * [0039af1] Run autopkgtests using nosetest
+    since dateutil now has a testsuite instead of a test script
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 16 Sep 2016 11:50:55 +0200
+
 python-dateutil (2.4.2-1pexip2) pexip; urgency=low
 
   * Drop local changes
