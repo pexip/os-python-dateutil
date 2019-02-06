@@ -2,17 +2,19 @@ Source: python-dateutil
 Section: python
 Priority: optional
 Maintainer: Guido Günther <agx@sigxcpu.org>
-Build-Depends: debhelper (>= 8),
+Build-Depends: debhelper (>= 10~),
  dh-python,
  python3,
  python3-setuptools,
+ python3-setuptools-scm,
  python3-six,
  python-all (>= 2.6.6-3~),
  python-setuptools,
+ python-setuptools-scm,
  python-six,
-Standards-Version: 3.9.8
-Vcs-Git: https://anonscm.debian.org/git/calendarserver/python-dateutil.git
-Vcs-Browser: https://anonscm.debian.org/git/calendarserver/python-dateutil.git
+Standards-Version: 4.0.0
+Vcs-Git: https://salsa.debian.org/agx/python-dateutil.git
+Vcs-Browser: https://salsa.debian.org/agx/python-dateutil
 X-Python-Version: >= 2.3
 X-Python3-Version: >= 3.2
 
@@ -20,7 +22,9 @@ Package: python-dateutil
 Architecture: all
 Depends: ${python:Depends}, ${misc:Depends}, tzdata
 XB-Python-Version: ${python:Version}
-Description: powerful extensions to the standard datetime module
+Breaks: python-icalendar (<< 4.0.3-2~),
+        python-vobject (<< 0.9.6.1-0.1~),
+Description: powerful extensions to the standard Python datetime module
  It features:
  .
   * computing of relative deltas (next month, next year, next monday, last week
@@ -36,12 +40,17 @@ Description: powerful extensions to the standard datetime module
     timezone
   * computing of Easter Sunday dates for any given year, using Western, Orthodox
     or Julian algorithms
+ .
+ This package provides the Python 2 version of the datetime module.
 
 Package: python3-dateutil
 Architecture: all
 Depends: ${python3:Depends}, ${misc:Depends}, tzdata
 XB-Python-Version: ${python3:Version}
-Description: powerful extensions to the standard datetime module
+Breaks: khal (<< 1:0.9.10-0.1~),
+        python3-icalendar (<< 4.0.3-2~),
+        python3-vobject (<< 0.9.6.1-0.1~),
+Description: powerful extensions to the standard Python 3 datetime module
  It features:
  .
   * computing of relative deltas (next month, next year, next monday, last week
@@ -57,3 +66,5 @@ Description: powerful extensions to the standard datetime module
     timezone
   * computing of Easter Sunday dates for any given year, using Western, Orthodox
     or Julian algorithms
+ .
+ This package provides the Python 3 version of the datetime module.
