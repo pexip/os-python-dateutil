@@ -1,3 +1,9 @@
+python-dateutil (2.5.3-2pexip2) pexip; urgency=low
+
+  * Bump up the version because of updated overrides
+
+ -- Mikhail Fludkov <misha@pexip.com>  Tue, 14 May 2019 11:06:32 +0000
+
 python-dateutil (2.5.3-2pexip1) pexip; urgency=low
 
   * New upstream release
