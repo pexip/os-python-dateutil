@@ -16,7 +16,7 @@ Vcs-Git: https://anonscm.debian.org/git/calendarserver/python-dateutil.git
 Vcs-Browser: https://anonscm.debian.org/git/calendarserver/python-dateutil.git
 X-Python-Version: >= 2.3
 X-Python3-Version: >= 3.2
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
 
 Package: python-dateutil
 Architecture: all
