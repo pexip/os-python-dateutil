@@ -1,3 +1,51 @@
+python-dateutil (2.7.3-3) unstable; urgency=medium
+
+  [ Antonio Terceiro ]
+  * Add necessary breaks.
+    Add breaks against reverse-dependencies that can't cope with the new
+    upstream version. (Closes: #907718)
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 06 Feb 2019 14:35:10 +0100
+
+python-dateutil (2.7.3-2) unstable; urgency=medium
+
+  [ Antonio Terceiro ]
+  * Add necessary breaks.
+    Add breaks against reverse-dependencies that can't cope with the new
+    upstream version. (Closes: #907718)
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 06 Feb 2019 14:35:02 +0100
+
+python-dateutil (2.7.3-1) unstable; urgency=medium
+
+  * New upstream version 2.7.3 (Closes: #903478, #876038)
+  * Rediff patches
+  * d/control: python*-setuptools-scm is needed now
+  * d/tests: Upstream is now using pytest
+  * d/control: Switch Vcs-* to salsa
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 30 Aug 2018 22:52:59 +0200
+
+python-dateutil (2.6.1-1) unstable; urgency=medium
+
+  * [777d7bc] New upstream version 2.6.1
+  * [eb1134f] Rediff patches
+  * [72c3178] Bump standards version (no changes needed)
+  * [d632228] Use versioned debhelper build-dep
+  * [4f20417] Make short and long descritions unique
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 24 Aug 2017 22:06:11 +0200
+
+python-dateutil (2.6.0-1) unstable; urgency=medium
+
+  * [4e96182] Use DEP14 branch layout
+  * [57f8072] New upstream version 2.6.0
+    (Closes: #867865)
+  * [9ae38ed] Update zoneinfo patch to new upstream version
+  * [ef8c0e9] Bump standards version
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 10 Jul 2017 09:08:08 +0200
+
 python-dateutil (2.5.3-2pexip2) pexip; urgency=low
 
   * Bump up the version because of updated overrides
