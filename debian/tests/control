@@ -1,8 +1,5 @@
 Tests: upstream
 Depends: @,
- python-freezegun,
- python-hypothesis,
- python-pytest,
  python3-freezegun,
  python3-hypothesis,
  python3-pytest,
