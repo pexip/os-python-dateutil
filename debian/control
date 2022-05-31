@@ -18,7 +18,7 @@ Vcs-Git: https://salsa.debian.org/agx/python-dateutil.git
 Vcs-Browser: https://salsa.debian.org/agx/python-dateutil
 X-Python-Version: >= 2.3
 X-Python3-Version: >= 3.2
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
 
 Package: python-dateutil
 Architecture: all
