@@ -2,48 +2,18 @@ Source: python-dateutil
 Section: python
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
-XSBC-Pexip-Original-Maintainer: Guido Günther <agx@sigxcpu.org>
-Build-Depends: debhelper (>= 10~),
+XSBC-Pexip-Original-Maintainer: Debian Python Team <team+python@tracker.debian.org>
+XSBC-Pexip-Original-Uploaders: Guido Günther <agx@sigxcpu.org>,
+Build-Depends: debhelper-compat (= 10),
  dh-python,
- python3,
+ python3-all,
  python3-setuptools,
  python3-setuptools-scm,
  python3-six,
- python-all (>= 2.6.6-3~),
- python-setuptools,
- python-setuptools-scm,
- python-six,
 Standards-Version: 4.0.0
-Vcs-Git: https://salsa.debian.org/agx/python-dateutil.git
-Vcs-Browser: https://salsa.debian.org/agx/python-dateutil
-X-Python-Version: >= 2.3
-X-Python3-Version: >= 3.2
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-dateutil.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-dateutil
 XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
-
-Package: python-dateutil
-Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, tzdata
-XB-Python-Version: ${python:Version}
-Breaks: python-icalendar (<< 4.0.3-2~),
-        python-vobject (<< 0.9.6.1-0.1~),
-Description: powerful extensions to the standard Python datetime module
- It features:
- .
-  * computing of relative deltas (next month, next year, next monday, last week
-    of month, etc);
-  * computing of relative deltas between two given date and/or datetime objects
-  * computing of dates based on very flexible recurrence rules, using a superset
-    of the iCalendar specification. Parsing of RFC strings is supported as well.
-  * generic parsing of dates in almost any string format
-  * timezone (tzinfo) implementations for tzfile(5) format files
-    (/etc/localtime, /usr/share/zoneinfo, etc), TZ environment string (in all
-    known formats), iCalendar format files, given ranges (with help from
-    relative deltas), local machine timezone, fixed offset timezone, UTC
-    timezone
-  * computing of Easter Sunday dates for any given year, using Western, Orthodox
-    or Julian algorithms
- .
- This package provides the Python 2 version of the datetime module.
 
 Package: python3-dateutil
 Architecture: all

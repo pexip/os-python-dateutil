@@ -1,3 +1,56 @@
+python-dateutil (2.8.1-6) unstable; urgency=medium
+
+  [ Bastian Germann ]
+  * Team upload
+  * Package was relicensed under BSD (Closes: #801951)
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 16 Jul 2021 09:51:20 +0100
+
+python-dateutil (2.8.1-5) unstable; urgency=medium
+
+  * Team Upload.
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/changelog: Remove trailing whitespaces.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Nilesh Patra ]
+  * Clean _version.py pre-build (Closes: #978278)
+
+ -- Nilesh Patra <npatra974@gmail.com>  Sun, 03 Jan 2021 15:00:03 +0530
+
+python-dateutil (2.8.1-4) unstable; urgency=medium
+
+  * Drop python2 support; Closes: #937687
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 23 Apr 2020 10:18:32 -0400
+
+python-dateutil (2.8.1-3) unstable; urgency=medium
+
+  * Dont run unittests for python2 binary, to reduce pytest rdeps
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Apr 2020 20:34:59 -0400
+
+python-dateutil (2.8.1-2) unstable; urgency=medium
+
+  * Move maintainership under DPMT (with Guido's ack)
+  * Revert "Remove Python 2 support", there are still reverse dependencies
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 06 Apr 2020 10:41:55 -0400
+
+python-dateutil (2.8.1-1) unstable; urgency=medium
+
+  * New upstream version 2.8.1
+  * Rediff patches
+  * Add salsa-ci
+  * Remove Python 2 support
+    (Closes: #948295)
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 06 Apr 2020 08:42:05 +0200
+
 python-dateutil (2.7.3-3pexip2) pexip; urgency=medium
 
   * Rebuild in buster environment
@@ -229,7 +282,7 @@ python-dateutil (1.4-1) unstable; urgency=low
 
   * new upstream version
   * add watch file from dehs.debian.org
-  * build-depend on python-setuptools 
+  * build-depend on python-setuptools
 
  -- Guido Guenther <agx@sigxcpu.org>  Wed, 12 Mar 2008 10:59:20 +0100
 
