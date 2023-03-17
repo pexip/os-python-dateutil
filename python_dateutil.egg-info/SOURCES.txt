@@ -12,7 +12,6 @@ appveyor.yml
 azure-pipelines.yml
 codecov.yml
 pyproject.toml
-release.py
 requirements-dev.txt
 setup.cfg
 setup.py
@@ -20,6 +19,8 @@ tox.ini
 updatezinfo.py
 zonefile_metadata.json
 .github/pull_request_template.md
+.github/workflows/publish.yml
+.github/workflows/validate.yml
 changelog.d/.gitignore
 changelog.d/template.rst
 ci_tools/make_zonefile_metadata.py
@@ -52,6 +53,7 @@ dateutil/test/test_tz.py
 dateutil/test/test_utils.py
 dateutil/test/property/test_isoparse_prop.py
 dateutil/test/property/test_parser_prop.py
+dateutil/test/property/test_tz_prop.py
 dateutil/tz/__init__.py
 dateutil/tz/_common.py
 dateutil/tz/_factories.py
