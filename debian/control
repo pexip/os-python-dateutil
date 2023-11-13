@@ -4,21 +4,23 @@ Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Python Team <team+python@tracker.debian.org>
 XSBC-Pexip-Original-Uploaders: Guido Günther <agx@sigxcpu.org>,
-Build-Depends: debhelper-compat (= 10),
+Build-Depends: debhelper-compat (= 13),
  dh-python,
  python3-all,
  python3-setuptools,
  python3-setuptools-scm,
  python3-six,
-Standards-Version: 4.0.0
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-dateutil.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-dateutil
+Homepage: https://github.com/dateutil/dateutil
 XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
 
 Package: python3-dateutil
 Architecture: all
 Depends: ${python3:Depends}, ${misc:Depends}, tzdata
-XB-Python-Version: ${python3:Version}
+Multi-Arch: foreign
 Breaks: khal (<< 1:0.9.10-0.1~),
         python3-icalendar (<< 4.0.3-2~),
         python3-vobject (<< 0.9.6.1-0.1~),

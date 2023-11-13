@@ -1,13 +1,15 @@
-From: =?utf-8?q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
+From 49f1a86aa7989e497114437dfef8ad51d5b413fe Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
 Date: Sat, 27 Sep 2014 20:52:15 +0200
-Subject: Remove Zoneinfo Tarball
+Subject: [PATCH] Remove Zoneinfo Tarball
 
 ---
  MANIFEST.in                          | 1 +
  dateutil/test/test_tz.py             | 2 ++
+ dateutil/tz/tz.py                    | 4 ----
  python_dateutil.egg-info/SOURCES.txt | 3 +--
  setup.cfg                            | 3 ---
- 4 files changed, 4 insertions(+), 5 deletions(-)
+ 5 files changed, 4 insertions(+), 9 deletions(-)
 
 diff --git a/MANIFEST.in b/MANIFEST.in
 index d4d9f32..3e8b3fb 100644
@@ -19,10 +21,10 @@ index d4d9f32..3e8b3fb 100644
  global-exclude *.py[co]
 +exclude dateutil/zoneinfo/dateutil-zoneinfo.tar.gz
 diff --git a/dateutil/test/test_tz.py b/dateutil/test/test_tz.py
-index 6cd8ea0..042f28e 100644
+index e5e4772..fa84872 100644
 --- a/dateutil/test/test_tz.py
 +++ b/dateutil/test/test_tz.py
-@@ -1184,6 +1184,7 @@ def test_gettz_weakref():
+@@ -1193,6 +1193,7 @@ def test_gettz_weakref():
      assert NYC_ref() is None    # Should have been pushed out
      assert tz.gettz('America/New_York') is not NYC_ref()
  
@@ -30,7 +32,7 @@ index 6cd8ea0..042f28e 100644
  class ZoneInfoGettzTest(GettzTest):
      def gettz(self, name):
          zoneinfo_file = zoneinfo.get_zonefile_instance()
-@@ -2408,6 +2409,7 @@ class TzPickleTest(PicklableMixin, unittest.TestCase):
+@@ -2417,6 +2418,7 @@ class TzPickleTest(PicklableMixin, unittest.TestCase):
      def testPickleTzGettz(self):
          self.assertPicklable(tz.gettz('America/New_York'))
  
@@ -38,11 +40,26 @@ index 6cd8ea0..042f28e 100644
      def testPickleZoneFileGettz(self):
          zoneinfo_file = zoneinfo.get_zonefile_instance()
          tzi = zoneinfo_file.get('America/New_York')
+diff --git a/dateutil/tz/tz.py b/dateutil/tz/tz.py
+index c67f56d..e350cdb 100644
+--- a/dateutil/tz/tz.py
++++ b/dateutil/tz/tz.py
+@@ -1650,10 +1650,6 @@ def __get_gettz():
+                                 # UnicodeEncodeError is for Python 2.7 compat
+                                 tz = None
+ 
+-                        if not tz:
+-                            from dateutil.zoneinfo import get_zonefile_instance
+-                            tz = get_zonefile_instance().get(name)
+-
+                         if not tz:
+                             for c in name:
+                                 # name is not a tzstr unless it has at least
 diff --git a/python_dateutil.egg-info/SOURCES.txt b/python_dateutil.egg-info/SOURCES.txt
-index c0d2a0f..ae4d43f 100644
+index c8e5497..a0ccdca 100644
 --- a/python_dateutil.egg-info/SOURCES.txt
 +++ b/python_dateutil.egg-info/SOURCES.txt
-@@ -58,7 +58,6 @@ dateutil/tz/_factories.py
+@@ -60,7 +60,6 @@ dateutil/tz/_factories.py
  dateutil/tz/tz.py
  dateutil/tz/win.py
  dateutil/zoneinfo/__init__.py
@@ -50,7 +67,7 @@ index c0d2a0f..ae4d43f 100644
  dateutil/zoneinfo/rebuild.py
  docs/Makefile
  docs/changelog.rst
-@@ -86,4 +85,4 @@ python_dateutil.egg-info/requires.txt
+@@ -88,4 +87,4 @@ python_dateutil.egg-info/requires.txt
  python_dateutil.egg-info/top_level.txt
  python_dateutil.egg-info/zip-safe
  requirements/3.3/constraints.txt
@@ -58,10 +75,10 @@ index c0d2a0f..ae4d43f 100644
 \ No newline at end of file
 +requirements/3.3/requirements-dev.txt
 diff --git a/setup.cfg b/setup.cfg
-index a5fe172..330b7cb 100644
+index 33283f9..f815c88 100644
 --- a/setup.cfg
 +++ b/setup.cfg
-@@ -41,9 +41,6 @@ test_suite = dateutil.test
+@@ -45,9 +45,6 @@ test_suite = dateutil.test
  exclude = 
  	dateutil.test
  

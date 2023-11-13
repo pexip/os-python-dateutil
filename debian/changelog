@@ -1,3 +1,37 @@
+python-dateutil (2.8.2-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Arnout Vandecappelle ]
+  * Don't fall back on bundled zoneinfo database (Closes: #1003044)
+
+ -- Felix Geyer <fgeyer@debian.org>  Fri, 17 Mar 2023 17:05:45 +0100
+
+python-dateutil (2.8.2-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release 2.8.2
+  * Drop old XB-Python-Version field
+  * Bump watch file version to 4
+  * Bump std-version to 4.6.1
+  * Bump compat level to 13
+  * Add R^3: no
+  * Drop trailing whitespace
+  * New upstream version 2.8.2
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 14 Oct 2022 13:10:49 +0200
+
+python-dateutil (2.8.1-7) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Team upload
+  * Add Homepage field (Closes: #1019389)
+
+  [ Helmut Grohne ]
+  * Mark python3-dateutils Multi-Arch: foreign (Closes: #1019489)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 14 Oct 2022 12:58:34 +0200
+
 python-dateutil (2.8.1-6pexip3) pexip-bullseye; urgency=medium
 
   * Bullseye rebuild for ARM64 inclusion
@@ -330,4 +364,3 @@ python-dateutil (1.0-1) unstable; urgency=low
   * Initial release (Closes: #386256)
 
  -- Guido Guenther <agx@sigxcpu.org>  Wed,  6 Sep 2006 10:33:06 +0200
-
