@@ -1,3 +1,53 @@
+python-dateutil (2.9.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Fix test failure in 2027 (closes: #1078638).
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 18 Mar 2025 16:20:59 +0000
+
+python-dateutil (2.9.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Remove python3-six usage with a patch
+
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 29 Sep 2024 16:21:30 +0200
+
+python-dateutil (2.9.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Register pytest marks (add setup.cfg to test environment)
+
+ -- Julian Gilbey <jdg@debian.org>  Mon, 25 Mar 2024 07:36:09 +0000
+
+python-dateutil (2.9.0-1) unstable; urgency=medium
+
+  [ Andreas Tille ]
+  * Team upload.
+  * Add patch that should solve some DeprecationWarning in Python3.12
+    which affects: #1058414 (of package python-itsdangerous)
+    The patch is *not* applied since it is not sufficient and breaks several
+    other tests in dateutil
+  * Test all supported Python3 versions in autopkgtest (to show the
+    DeprecationWarning for Python3.12)
+
+  [ Julian Gilbey ]
+  * New upstream version (closes: #1063971)
+  * Refresh patches
+  * Remove ancient Breaks field from d/control and update
+    Standards-Version
+  * Remove unused upstream signing-key (no longer appears to be signed
+    upstream)
+  * Add d/upstream/metadata file
+
+ -- Julian Gilbey <jdg@debian.org>  Sun, 24 Mar 2024 21:28:04 +0000
+
+python-dateutil (2.8.2-3) unstable; urgency=medium
+
+  * Team upload
+  * Depend on tzdata-legacy for autopkgtest
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 10 Aug 2023 15:05:28 +0200
+
 python-dateutil (2.8.2-2) unstable; urgency=medium
 
   * Team upload.

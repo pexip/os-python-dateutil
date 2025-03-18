@@ -1,1 +1,3 @@
 Remove_Zoneinfo_Tarball.patch
+remove-six.patch
+tests-2027.patch
