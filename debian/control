@@ -6,11 +6,17 @@ XSBC-Pexip-Original-Maintainer: Debian Python Team <team+python@tracker.debian.o
 XSBC-Pexip-Original-Uploaders: Guido Günther <agx@sigxcpu.org>,
 Build-Depends: debhelper-compat (= 13),
  dh-python,
+ pybuild-plugin-pyproject,
  python3-all,
+ python3-freezegun <!nocheck>,
+ python3-hypothesis <!nocheck>,
+ python3-pytest <!nocheck>,
+ python3-pytest-cov <!nocheck>,
  python3-setuptools,
  python3-setuptools-scm,
- python3-six,
-Standards-Version: 4.6.1
+ tzdata-legacy <!nocheck>
+Testsuite: autopkgtest-pkg-pybuild
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-dateutil.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-dateutil
@@ -21,9 +27,6 @@ Package: python3-dateutil
 Architecture: all
 Depends: ${python3:Depends}, ${misc:Depends}, tzdata
 Multi-Arch: foreign
-Breaks: khal (<< 1:0.9.10-0.1~),
-        python3-icalendar (<< 4.0.3-2~),
-        python3-vobject (<< 0.9.6.1-0.1~),
 Description: powerful extensions to the standard Python 3 datetime module
  It features:
  .
@@ -40,5 +43,3 @@ Description: powerful extensions to the standard Python 3 datetime module
     timezone
   * computing of Easter Sunday dates for any given year, using Western, Orthodox
     or Julian algorithms
- .
- This package provides the Python 3 version of the datetime module.
